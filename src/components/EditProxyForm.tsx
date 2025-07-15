@@ -59,10 +59,9 @@ export function EditProxyForm({ proxyType, currentValue, service, onSave }: Edit
 
   const handleSave = async () => {
     if (!validateInput(value)) {
-      await showFailureToast(
-        new Error(proxyType === "auto" ? "Invalid URL" : "Invalid server:port format"),
-        { title: "Failed to create template" }
-      );
+      await showFailureToast(new Error(proxyType === "auto" ? "Invalid URL" : "Invalid server:port format"), {
+        title: "Failed to create template",
+      });
       return;
     }
 
